@@ -17,3 +17,9 @@ jobs:
     - run: yarn --frozen-lockfile
     - name: Build and export Nextjs pages
       run: yarn run export
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./out
+        force_orphan: true
