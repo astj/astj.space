@@ -3,10 +3,11 @@ module.exports = {
   root: true,
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 2019,
     sourceType: "module",
     createDefaultProgram: true,
-    project: "./tsconfig.json",
+    tsconfigRootDir: __dirname,
+    project: ["./tsconfig.json"],
     ecmaFeatures: {
       jsx: true,
     },
