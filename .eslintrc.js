@@ -1,11 +1,21 @@
+/* eslint-env node */
 module.exports = {
   root: true,
-  parser: '@typescript-eslint/parser',
-  plugins: [
-    '@typescript-eslint',
-  ],
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: "module",
+    createDefaultProgram: true,
+    project: "./tsconfig.json",
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
+  plugins: ["@typescript-eslint"],
   extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier/@typescript-eslint",
   ],
 };
